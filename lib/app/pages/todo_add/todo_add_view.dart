@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
+import 'package:flutter_clean_todo/data/data_todos_repository.dart';
 
 import 'todo_add_controller.dart';
 import 'widgets/todo_add_form.dart';
 
 class TodoAddView extends View {
   @override
-  _TodoAddViewState createState() => _TodoAddViewState(TodoAddController());
+  _TodoAddViewState createState() => _TodoAddViewState(
+      TodoAddController(DataTodosRepository())
+  );
 }
 
 class _TodoAddViewState extends ViewState<TodoAddView, TodoAddController> {
@@ -17,7 +20,8 @@ class _TodoAddViewState extends ViewState<TodoAddView, TodoAddController> {
     body: Container(
       child: TodoAddForm(
         onAdd: (value) {
-          print(value);
+          controller.addTodo(value);
+          Navigator.of(context).pop();
         },
       ),
     ),
