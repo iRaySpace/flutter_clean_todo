@@ -12,6 +12,7 @@ class TodosColumn extends StatelessWidget {
     return data.map((todo) =>
       TodoCard(
         title: todo.title,
+        completed: todo.completed,
         onTap: () => this.onPressed(todo.id),
       )
     ).toList();

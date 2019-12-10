@@ -14,7 +14,8 @@ class HomeController extends Controller {
     // TODO: implement initListeners
   }
 
-  void completeTodo(int id) {
+  void completeTodo(Map<String, dynamic> params) {
+    int id = params['id'];
     this.repository.completeTodo(id);
   }
 }
