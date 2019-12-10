@@ -26,7 +26,10 @@ class _HomeViewState extends ViewState<HomeView, HomeController> {
     ),
     body: Container(
       child: SingleChildScrollView(
-        child: TodosColumn(data: controller.todoList),
+        child: TodosColumn(
+          data: controller.todoList,
+          onPressed: (value) => controller.completeTodo(value),
+        ),
       ),
     ),
   );

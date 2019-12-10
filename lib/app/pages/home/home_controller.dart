@@ -7,10 +7,14 @@ class HomeController extends Controller {
 
   HomeController(this.repository): super();
 
+  List<Todo> get todoList => this.repository.allTodos;
+
   @override
   void initListeners() {
     // TODO: implement initListeners
   }
 
-  List<Todo> get todoList => this.repository.allTodos;
+  void completeTodo(int id) {
+    this.repository.completeTodo(id);
+  }
 }

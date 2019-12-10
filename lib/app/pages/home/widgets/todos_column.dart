@@ -4,10 +4,17 @@ import 'todo_card.dart';
 
 class TodosColumn extends StatelessWidget {
   final List<Todo> data;
-  TodosColumn({@required this.data});
+  final Function(int) onPressed;
+
+  TodosColumn({@required this.data, @required this.onPressed});
 
   List<Widget> dataToWidgets() {
-    return data.map((todo) => TodoCard(title: todo.title)).toList();
+    return data.map((todo) =>
+      TodoCard(
+        title: todo.title,
+        onTap: () => this.onPressed(todo.id),
+      )
+    ).toList();
   }
 
   @override
