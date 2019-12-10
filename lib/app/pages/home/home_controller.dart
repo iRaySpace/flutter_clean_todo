@@ -12,5 +12,5 @@ class HomeController extends Controller {
     // TODO: implement initListeners
   }
 
-  List<Todo> get todoList => this.repository.todos;
+  List<Todo> get todoList => this.repository.allTodos;
 }

@@ -13,13 +13,12 @@ class TodoAddController extends Controller {
   }
 
   void addTodo(String title) {
-    repository.todos.add(
+    repository.addTodo(
       Todo(
-        id: repository.todos.length,
+        id: repository.todosLength,
         title: title,
         completed: false,
       )
     );
-    print(repository.todos.length);
   }
 }

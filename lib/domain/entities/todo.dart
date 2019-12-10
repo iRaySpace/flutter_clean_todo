@@ -1,7 +1,7 @@
 class Todo {
   final int id;
-  final String title;
-  final bool completed;
+  String title;
+  bool completed;
   Todo({this.id, this.title, this.completed});
 
   @override
