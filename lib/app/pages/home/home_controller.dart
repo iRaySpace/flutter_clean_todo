@@ -21,6 +21,5 @@ class HomeController extends Controller {
         completed: false
       )
     );
-    refreshUI();
   }
 }

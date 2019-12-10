@@ -17,9 +17,7 @@ class _HomeViewState extends ViewState<HomeView, HomeController> {
     appBar: AppBar(title: Text('Home')),
     floatingActionButton: FloatingActionButton(
       child: Icon(Icons.add),
-      onPressed: () {
-        controller.addTodo();
-      },
+      onPressed: () => callHandler(controller.addTodo),
     ),
     body: Container(
       child: SingleChildScrollView(
