@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 import 'package:flutter_clean_todo/app/pages/todo_add/todo_add_view.dart';
+import 'package:flutter_clean_todo/data/data_todos_repository.dart';
 import 'home_controller.dart';
 import 'widgets/todos_column.dart';
 
 class HomeView extends View {
   @override
-  _HomeViewState createState() => _HomeViewState(HomeController());
+  _HomeViewState createState() => _HomeViewState(
+      HomeController(DataTodosRepository())
+  );
 }
 
 class _HomeViewState extends ViewState<HomeView, HomeController> {

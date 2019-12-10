@@ -1,25 +1,16 @@
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
+import 'package:flutter_clean_todo/data/data_todos_repository.dart';
 import 'package:flutter_clean_todo/domain/entities/todo.dart';
 
 class HomeController extends Controller {
+  final DataTodosRepository repository;
 
-  List<Todo> _todoList;
-  List<Todo> get todoList => _todoList;
-
-  HomeController(): _todoList = [], super();
+  HomeController(this.repository): super();
 
   @override
   void initListeners() {
     // TODO: implement initListeners
   }
 
-  void addTodo() {
-    _todoList.add(
-      Todo(
-        id: _todoList.length,
-        title: 'Test',
-        completed: false
-      )
-    );
-  }
+  List<Todo> get todoList => this.repository.todos;
 }
